@@ -1,0 +1,966 @@
+/*###### Start Main Style #####*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Cairo-Regular.ttf');
+    src: local('Cairo'), local('Cairo-Regular'), url('../fonts/Cairo-Regular.ttf') format('embedded-opentype'), url('../fonts/Cairo-Regular.ttf') format('ttf'),
+}
+
+body {
+    /*    height: 3000px;*/
+    overflow-x: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.overlay {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+}
+
+.active {
+    border-bottom: 2px solid rgb(17, 131, 207);
+}
+
+.goTop {
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+    color: #fff;
+    background: rgb(17, 131, 207);
+    text-align: center;
+    font-size: 24px;
+    line-height: 48px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: .14s ease-in-out;
+    -webkit-transition: .14s ease-in-out;
+    -moz-transition: .14s ease-in-out;
+    -ms-transition: .14s ease-in-out;
+    -o-transition: .14s ease-in-out;
+    display: none;
+}
+
+.goTop:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    font-size: 40px;
+    line-height: 48px;
+    z-index: 9999;
+}
+
+
+/*###### End Main Style #####*/
+
+header {
+    background-image: url('../img/pexels-photo-1090638.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+
+header nav {
+    border-bottom: 1px solid #fff;
+}
+
+nav.fixed-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    background: rgba(20, 20, 20, .8);
+}
+
+header .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.mobile-menu-btn {
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 24px;
+}
+
+header .top-bar ul {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+header .top-bar ul li {
+    padding: 0 8px;
+}
+
+header ul a {
+    color: #fff;
+    display: block;
+    transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+}
+
+header ul a:hover {
+    color: rgb(17, 131, 207);
+    font-weight: bold;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+header .welcome-msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+header .welcome-msg h1 {
+    font-size: 60px;
+    color: rgb(17, 131, 207);
+}
+
+header .welcome-msg p {
+    font-size: 50px;
+    color: #fff;
+    padding-bottom: 60px
+}
+
+header .welcome-msg .buttons ul{
+    display: flex;
+    justify-content: space-between;
+}
+header .welcome-msg .buttons ul li a{
+    color: #fff;
+    border: 1px solid #117FCF;
+    border-radius: 30px;
+    padding: 2px 15px 2px 15px;
+}
+
+header .scroll-down {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid rgb(48, 169, 250);
+    padding-top: 12px;
+}
+
+
+
+@keyframes scrollDownAnimation {
+    0% {
+        opacity: 0.5;
+    }
+
+    20% {
+        opacity: 0.25;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0.25;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+header .scroll-down span {
+    margin: auto;
+    height: 25px;
+    width: 25px;
+    display: block;
+    cursor: pointer;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    animation: scrollDownAnimation 1s ease-in-out infinite;
+    -webkit-animation: scrollDownAnimation 1s ease-in-out infinite;
+}
+
+.about {
+    background: rgb(17, 131, 207);
+    padding: 15px 0 50px 0;
+}
+
+.about h1 {
+    color: #fff;
+    text-align: center;
+    margin: 15px 0 35px 0;
+    text-transform: uppercase;
+}
+
+.about .item {
+    text-align: center;
+    color: #fff;
+    position: static !important;
+}
+
+.about .icon-container {
+    background: rgb(4, 98, 161);
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.testemonials {
+    min-height: 400px;
+    background: url('../img/blur-bulb-close-up-371906.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center
+}
+
+.testemonials .swiper-slide {
+    color: #fff;
+    text-align: center;
+}
+
+.testemonials .swiper-slide p {
+    width: 70%;
+    margin: 5px auto;
+}
+
+.testemonials .swiper-pagination-bullet {
+    background: #fff;
+}
+
+.testemonials .customer-img {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.testemonials .customer-img img {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+/* Start Contact US */
+
+.contact {
+    background: rgb(17, 131, 207);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    text-align: center
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.contact h2 {
+    font-size: 30px;
+    color: #fff;
+}
+
+.contact p {
+    line-height: 2;
+    color: #ccc;
+}
+
+.contact form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact form input {
+    line-height: 40px;
+    flex-basis: 48%;
+}
+
+.contact form input,
+.contact form textarea {
+    border-radius: 7px;
+    border: 1px solid #f4f4f4;
+    outline: none;
+    padding: 0 10px;
+    margin: 20px 0;
+    background: transparent;
+    color: #fff;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    color: #fff
+}
+
+.contact form textarea {
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 10px;
+    resize: none;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+
+.contact form .info {
+    overflow: hidden;
+    margin-top: 5px;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact form .info button {
+    background: #666;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 6px 15px;
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.contact form .info button:hover {
+    background-color: #c25a22;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact form .info .social-media svg {
+    background: #777;
+    margin: 0 5px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.contact form .info .social-media svg:nth-child(1) {
+    background: #3b5998;
+}
+
+.contact form .info .social-media svg:nth-child(2) {
+    background: #55acee;
+}
+
+.contact form .info .social-media svg:nth-child(3) {
+    background: #ff0000;
+}
+
+.contact form .info .social-media svg:nth-child(4) {
+    background: #dd4b39;
+}
+
+.contact form .info .social-media svg:hover {
+    transform: rotateX(720deg) rotateY(720deg) scale(1.25);
+    background: rgb(31, 95, 20);
+}
+
+/* End Contact US */
+
+/* Start Footer */
+
+.footer {
+    background: #3b434c;
+    color: #fff;
+    overflow: hidden;
+    padding: 30px 0;
+
+}
+
+.footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+
+/* End Footer */
+
+
+
+/*start admin page*/
+
+.admin-page{
+    background-image: url(../img/grand.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+.admin-page .list{
+/*    height: 60%;*/
+    width: 30%;
+    background-color: rgb(17, 127, 207,0.7);
+    border-radius: 30px;
+    position: absolute;
+    right: 30px;
+    top: 130px;
+    overflow: hidden;
+}
+.admin-page .list h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 10px
+}
+.admin-page .list .admin{
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px
+}
+.admin-page .list .admin input{
+    width: 250px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-right: 35px;
+    border: #fff
+}
+.admin-page .list .admin p{
+    color: #fff;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.admin-page .list .admin-button ul{
+    display: flex;
+    justify-content: space-between;
+}
+.admin-page .list .admin-button .sub{
+    color: #117FCF;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    background-color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0px ;
+    margin: 0px ;
+
+
+
+}
+.admin-page .list .admin-button ul li{
+    border: 1px solid #fff;
+    border-radius: 50px;
+    background-color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0px 30px 0px 30px;
+    margin: 0px 35px 15px 35px;
+}
+.admin-page .list .admin-button ul li a{
+    color: #117FCF;
+}
+.admin-page .list .admin-button .back{
+    padding: 0px 35px 0px 35px
+} 
+
+/*Mahmoud Hamada edit*/
+/*Page_Register*/
+.page_mmo {
+    background-image: url(../img/grand.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+.admin-page .listt{
+    /*    height: 60%;*/
+        width: 40%;
+        background-color: rgb(17, 127, 207,0.7);
+        border-radius: 30px;
+        position: absolute;
+        right: 30px;
+        top: 80px;
+        overflow: hidden;
+    }
+.admin-page .listt h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 10px
+}
+.admin-page .listt .admin{
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px
+}
+.admin-page .listt .admin input{
+    width: 250px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-right: 35px;
+    border: #fff
+}
+.admin-page .listt .admin p{
+    color: #fff;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.admin-page .listt .admin-button ul{
+    display: flex;
+    justify-content: space-between;
+}
+.admin-page .listt .admin-button ul li{
+    border: 1px solid #fff;
+    border-radius: 50px;
+    background-color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px 30px 0px 30px;
+    margin: 0px 35px 15px 35px;
+}
+.admin-page .listt .admin-button ul li a{
+    color: #117FCF;
+}
+.admin-page .listt .admin-button .back{
+    padding: 0px 35px 0px 35px
+} 
+/*Mahmoud Hamada edit*/
+/*Page_Register*/
+
+/*end admin page*/
+
+/*start Manage Tutor*/
+
+header {
+    background-image: url('../img/back2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+header .nav-manage{
+    background-color: #117FCF;
+}
+header .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+header .bar .nav-list ul{
+    display: flex;
+    justify-content: space-between;
+}
+header .bar .nav-list ul li{
+    padding-left: 40px;
+}
+header .bar .logo{
+    font-size: 30px;
+}
+header .bar .nav-list .last-li a{
+    margin-left: 30px;
+    border: 1px solid #fff;
+    color: #117FCF;
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+header input {
+    margin: 30px;
+    padding: 5px;
+    border-radius: 20px;
+    border: #fff;
+    width: 370px;
+    margin-bottom: 80px
+}
+.table{color: #fff}
+
+.table td, .table th {
+    border-top: 0px ;
+    text-align: center;
+}
+.table tbody tr .high a{
+    font-weight: bold;
+}
+.table tbody tr .up a{
+    background: none;
+    color: #fff;
+    background-color: #0C8114;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px 0px;
+    margin: 20px 0;
+    text-decoration: none;
+}
+.table tbody tr .del a{
+    background: none;
+    color: #fff;
+    background-color: #810C0C;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px 0px;
+    margin: 20px 0;
+    text-decoration: none;
+}
+.table thead th{
+    border-bottom: 0px;
+    text-align: center;
+}
+tr th {
+    background-color: #117FCF;
+    margin-right: 10px
+}
+
+/*end Manage Tutor*/
+
+/*start Manage E-Books*/
+.inpo{
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 49px 80px 30px;
+}
+.inpo ul li a{
+    border-radius: 20px;
+    background: none;
+    background-color: #fff;
+    color: #117FCF;
+    border: none;
+    font-weight: bold;
+    padding: 5px 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+header .inpo input{
+    margin: 0;
+}
+
+/*end Manage E-Books*/
+
+
+/*start my profile*/
+header .b{
+    color: #fff;
+    margin-top: 10px;
+
+}
+header .msg{
+    color: #fff;
+    font-weight: bold;
+    padding:100px 50px;
+    font-size: 30px;
+}
+
+.table-impo {
+    margin-top: 30px;
+}
+tbody td {
+    background-color: #fff;
+    color: #117FCF;
+    font-weight: bold;
+}
+
+.container .text-center .btn{
+    background: #fff;
+    color: #117FCF;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+    font-size: 20px;
+
+}
+
+.container .table-impo .e{
+    margin: 0px;
+    background:  #117FCF;
+    color: #fff;
+    font-weight: bold;
+}
+.container .table-impo .a{
+    margin: 0px;
+    background: #fff;
+    color: #117FCF;
+    font-weight: bold;
+}
+
+
+/*end my profile*/
+
+/*start Parent  Login*/
+.reg {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px 40px 20px
+}
+.reg a{
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 17px
+}
+.reg button{
+    color: #fff;
+    background: none;
+    border-radius: 37px;
+    border: 2px solid #fff;
+    padding: 7px 30px;
+    outline: none;
+    transition: all .7s ease-in-out;
+    cursor: pointer;
+    
+}
+.reg button:hover {
+    background-color: #212745;
+    color: #fff;
+    cursor: pointer;
+}
+.reg .aa{
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none
+}
+.timp{
+    margin-top: 200px
+}
+/*end Parent  Login*/
+/*start register page*/
+.register {
+    background-color: #fff;
+    margin: auto;
+    width: 40%;
+    border-radius: 10px;
+    background-color: #eee
+}
+.register .form h4{
+    color: #117FCF;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.register .ta-reg{
+    margin: 20px auto;
+    width: 80%;
+}
+.reg button{
+    color: #fff;
+    background-color: #117FCF;
+    border-radius: 37px;
+    border: 2px solid #fff;
+    padding: 7px 30px;
+    outline: none;
+    transition: all .7s ease-in-out;
+    cursor: pointer;
+    
+}
+.reg button:hover {
+    background-color: #212745;
+    color: #fff;
+    cursor: pointer;
+}
+.reg .bb{
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none
+}
+.register .form{
+    display: flex;
+    justify-content: space-between;
+}
+.register .form input{
+    margin: 6px 110px 6px 0;
+}
+.reg-inpo{
+    margin: 45px 49px 0px 30px;
+}
+.register h4{
+    color: #117FCF;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.register .form .appoint{
+    margin: 6px 80px 6px 0;
+}
+.btn-back{
+    background-color: #fff;
+    color: #117FCF;
+    margin: 30px;
+    font-weight: bold;
+}
+.pay{
+    margin-top: 100px;
+}
+.register .form .special{
+    width: 142px
+}
+.pay-button{
+    margin: auto;
+    margin-top: 50px;
+}
+.rate-butt{
+    margin: 20px 100px 10px 100px;
+}
+.rate-list{
+    margin-top: 100px
+}
+.register .form .rate-spe{
+    width: 100px;
+    margin: 6px 110px 6px 0px;
+}
+/*end register page*/
+/*start Request a Demo and Book*/
+.four-boxes{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 60px
+}
+.four-boxes .box{
+    flex-basis: 17%;
+    color: #117FCF;
+    background-color: #fff;
+    border-radius: 20px
+}
+.four-boxes .box h4{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 30px
+}
+/*end Request a Demo and Book*/
+
+
+
+
+@media(max-width:992px) {
+    header .top-bar ul.main-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+@media(max-width:576px) {
+    header .top-bar {
+        justify-content: space-around;
+    }
+}
